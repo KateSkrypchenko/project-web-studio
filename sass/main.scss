@@ -1,0 +1,30 @@
+@import "./utils/variables";
+@import "./utils/mixin";
+@import "./utils/placeholder";
+
+@import "./base/normalize";
+@import "./base/reset";
+
+@import "./components/logo";
+@import "./components/menu";
+@import "./components/social-list";
+@import "./components/soc-list-icon";
+@import "./components/button";
+@import "./components/modal";
+@import "./components/container";
+
+
+@import "./layout/header";
+@import "./layout/hero";
+@import "./layout/features";
+@import "./layout/works";
+@import "./layout/team";
+@import "./layout/clients";
+@import "./layout/footer";
+@import "./layout/portfolio";
+
+
+
+
+
+

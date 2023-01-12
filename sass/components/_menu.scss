@@ -1,0 +1,148 @@
+.menu {
+  @include animation(transform, opacity, visibility);
+  
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  opacity: 1;
+  transform: translate(0, 0);
+  
+  background-color: $primary-bgc;
+
+  &.is-hidden {
+    transform: translateX(50%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.menu .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: auto;
+}
+
+.btn-open {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menu__btn,
+.btn-open {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu__btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.menu__icon,
+.btn-open__icon {
+  @include animation(fill, null, null);
+  fill: #212121;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+}
+
+.menu-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.menu-nav__link {
+  @include animation(color, null, null);
+  @include font(500, 40px, 1.18, 0.02em);
+
+  color: $secondary-color-text;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &--current {
+    color: $accent-color;
+  }
+}
+
+.menu-connect-list {
+  margin-bottom: 64px;
+}
+
+.menu-connect-list__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.menu-connect-list__link {
+  @include font(500, 24px, 1.18, 0.02em);
+
+  color: $accent-color;
+
+  &--mail {
+    @include animation(color, null, null);
+    font-size: 24px;
+    color: $primary-color-text;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    &:hover, &:focus {
+      color: $accent-color;
+    }
+  }
+
+  @media screen and (min-width: 406px) {
+    @include font(500, 34px, 1.18, 0.02em);
+  }
+}
+
+.menu-social-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-social-list__item {
+  padding-left: 10px;
+
+  &:first-child {
+    padding-left: 0;
+    padding-right: 10px;
+  }
+
+  &:not(:last-child) {
+    padding-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+  }
+}
+
+.menu-social-list__link {
+  @include animation(color, null, null);
+  @include font(500, 18px, 1.22, 0.02em);
+
+  color: $primary-color-text;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}

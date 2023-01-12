@@ -1,0 +1,142 @@
+.header {
+  border-bottom: 1px solid $header-border-color;
+}
+
+.header__container {
+  min-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    min-height: 80px;
+  }
+}
+
+.header-nav {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.nav-list__link {
+  @include animation(color, null, null);
+  @include font(500, 14px, 1.14, 0.02em);
+  position: relative;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: $secondary-color-text;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &::after {
+    @include animation(opacity, null, null);
+    position: absolute;
+    bottom: -2%;
+
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+
+    background-color: $accent-color;
+    border-radius: 2px;
+    opacity: 0;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+  }
+}
+
+.nav-list__link--current {
+  color: $accent-color;
+
+  &::after {
+    @include animation(opacity, null, null);
+    position: absolute;
+    bottom: -2%;
+
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+
+    background-color: $accent-color;
+    border-radius: 2px;
+    opacity: 1;
+  }
+}
+
+.connect-list {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-left: auto;
+    padding: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    padding: 0;
+  }
+}
+
+.connect-list__item:not(:last-child) {
+  margin-bottom: 10px;
+  
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
+    margin-right: 50px;
+  }
+}
+
+.connect-list__link {
+  @include animation(color, null, null);
+  @include font(500, 12px, 1.16, 0.02em);
+  display: flex;
+  align-items: center;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  color: $primary-color-text;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    fill: $accent-color;
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include font(500, 14px, 1.14, 0.02em);
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+.connect-list__icon {
+  margin-right: 8px;
+
+  fill: currentColor;
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 10px;
+  }
+}

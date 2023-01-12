@@ -1,0 +1,40 @@
+.logo {
+  @include font(700, 24px, 1.17, 0.03em);
+
+  display: inline-block;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  font-family: 'Raleway', sans-serif;
+
+  color: $header-logo-text;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 87px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+}
+
+.logo--white {
+  @include font(700, 24px, 1.17, 0.03em);
+
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  color: $hero-color-text;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 0;
+  }
+}
+
+.logo__text {
+  color: $accent-color;
+}

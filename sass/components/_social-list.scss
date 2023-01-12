@@ -1,0 +1,25 @@
+.social-list {
+  display: none;
+  // display: flex;
+}
+
+.social-list__item {
+    padding-right: 10px;
+    padding-left: 10px;
+    
+  &:not(:last-child) {
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+  }
+}
+
+.social-list__link {
+  @include animation(color, null, null);
+  @include font(500, 18px, 1.22, 0.02em);
+
+  color: $primary-color-text;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
